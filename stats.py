@@ -11,3 +11,13 @@ def get_num_letters(text):
                 else:
                         letter_counts[letter] += 1
         return letter_counts
+
+def sort_on(item):
+        return item["num"]
+
+def format_data(letter_counts):
+        formatted = []
+        for letter, num in letter_counts.items():
+                formatted.append({"letter": letter, "num": num})
+        formatted.sort(reverse=True, key=sort_on)
+        return formatted
